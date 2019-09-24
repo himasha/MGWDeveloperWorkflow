@@ -20,7 +20,9 @@ This project presents how to expose a Spring boot service and a Ballerina servic
 
 1. Install Ballerina as per instructions in above section.You could check if the installation is done by running thecommand 'ballerina -v'. Copy MySQL JDBC driver to the BALLERINA_HOME/bre/lib folder, as Mysql is the database that is used. 
 
-2. Checkout microservices/ballerina folder which comprises of the book-search ballerina service. In this service, we are fetching the data from a Mysql database deployed in docker.You could refer [1] on how to deploy Mysql in docker for Mac. Additionally you could find the db script (with the schema defined) as db-scripts/initializeDataBase.sql to create the necessary table. Please update mysql connector information under below annotation (host,port,username,password) to suit your configurations.
+2. Checkout microservices/ballerina folder which comprises of the book-search ballerina service. In this service, we are fetching the data from a Mysql database deployed in docker.You could refer [1] on how to deploy Mysql in docker for Mac. Additionally you could find the db script (with the schema defined) as db-scripts/initializeDataBase.sql to create the necessary table. Alternatively you could pull the mysql docker image from https://cloud.docker.com/u/himasha91/repository/docker/himasha91/mg_mysql with username:password himasha:himasha..
+
+Please update mysql connector information under below annotation (host,port,username,password) to suit your configurations.
 
 mysql:Client booksDB = new({
 
