@@ -10,8 +10,8 @@ mysql:Client booksDB = new({
      host: "localhost",
         port: 3306,
         name: "bookstore",
-        username: "himasha",
-        password: "himasha",
+        username: "******",
+        password: "******",
         dbOptions: { useSSL: false }
     });
 
@@ -22,6 +22,8 @@ mysql:Client booksDB = new({
 @kubernetes:Deployment {
     name:"online-books-search-deployment",
     image:"himasha91/onlinesearch:1.0.0",
+    copyFiles: [{ target: "/ballerina/runtime/bre/lib",
+                source: "PATH_TO_MYSQL_DRIVER_JAR" }]
 }
 @http:ServiceConfig {
     basePath: "/books"
