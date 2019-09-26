@@ -24,9 +24,9 @@ This project presents how to expose a Spring boot service and a Ballerina servic
 
 Please update mysql connector information under below annotation (host,port,username,password) to suit your configurations.
 
-mysql:Client booksDB = new({
+`mysql:Client booksDB = new({
 
-     host: "localhost",  // If mysql is deployed in kubernetes following [1] use servicename.namespace as host 
+     host: "localhost",  // If mysql is deployed in kubernetes following [1], use <servicename.namespace> as host value
      
         port: 3306, 
         
