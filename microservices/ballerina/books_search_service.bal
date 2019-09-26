@@ -5,9 +5,9 @@ import ballerinax/kubernetes;
 import ballerina/mysql;
 import ballerina/sql;
 
-// Create SQL client for MySQL database
+// Create SQL client for MySQL database: sample host: mysql.default (assuming that the kubernetes mysql service name is 'mysql' deployed in 'default namespace')
 mysql:Client booksDB = new({
-     host: "localhost",
+     host: "localhost",   
         port: 3306,
         name: "bookstore",
         username: "******",
