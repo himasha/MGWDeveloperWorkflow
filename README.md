@@ -20,13 +20,13 @@ This project presents how to expose a Spring boot service and a Ballerina servic
 
 1. Install Ballerina as per instructions in above section.You could check if the installation is done by running thecommand 'ballerina -v'. Copy MySQL JDBC driver to the BALLERINA_HOME/bre/lib folder, as Mysql is the database that is used. 
 
-2. Checkout microservices/ballerina folder which comprises of the book-search ballerina service. In this service, we are fetching the data from a Mysql database deployed in kubernetes.You would need to create a kubernetes deployment of mysql and add a schema similar to the db script (with the schema defined) as db-scripts/initializeDataBase.sql.
+2. Checkout microservices/ballerina folder which comprises of the book-search ballerina service. In this service, we are fetching the data from a Mysql database deployed in kubernetes.You would need to create a kubernetes deployment of mysql and add a schema similar to the db script (with the schema defined) as db-scripts/initializeDataBase.sql. Refer [1] on creating a mysql kubernetes deployment. 
 
 Please update mysql connector information under below annotation (host,port,username,password) to suit your configurations.
 
 mysql:Client booksDB = new({
 
-     host: "localhost", 
+     host: "localhost",  // If mysql is deployed in kubernetes following [1] use servicename.namespace as host 
      
         port: 3306, 
         
@@ -168,4 +168,4 @@ This process can be followed by the entire development team, where a single MGW 
 In a potential CI process you could push this project to a source repository such as git and integrate a cotinuous build with CI server such as Jenkins.
 
 
-[1] https://dzone.com/articles/docker-for-mac-mysql-setup
+[1] https://kubernetes.io/docs/tasks/run-application/run-single-instance-stateful-application/
